@@ -1,0 +1,29 @@
+{% extends 'todo_app/base.html' %}
+
+
+{%block content%}
+<div class="header-bar">
+    <h1>Register</h1>
+</div>
+<div class="card-body">
+    <form action="" method="post">
+        {%csrf_token%}
+        <label>{{form.username.label}}</label>
+        {{form.username}}
+        <label>{{form.password1.label}}</label>
+        {{form.password1}}
+        <label>{{form.password2.label}}</label>
+        {{form.password2}}
+        <input style="margin-top: 10px;" class="button" type="submit" value="Register">
+    </form>
+        <ul>
+            <li>Password should at least be 8 digits.</li>
+            <li>Password and Confirmation Password should Match.</li>
+            <li>Password should be alphanumeric.</li>
+        </ul>
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</div>
+{%endblock%}
+
+
+
